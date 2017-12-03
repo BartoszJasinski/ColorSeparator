@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ColorSeparator
 {
-    public partial class Form1 : Form
+    public partial class ColorSeparator : Form
     {
-        public Form1()
+        public ColorSeparator()
         {
             InitializeComponent();
         }
