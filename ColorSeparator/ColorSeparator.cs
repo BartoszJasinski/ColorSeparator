@@ -11,6 +11,7 @@ using System.IO;
 
 using ColorSeparator.Data;
 using ColorSeparator.Utils;
+using ColorSeparator.Data.SeparatedImages;
 
 namespace ColorSeparator
 {
@@ -43,7 +44,7 @@ namespace ColorSeparator
             if (programData.loadedImage == null)
                 return;
 
-            loadedImagePictureBox.Image = ImageAlgorithms.Convert2Grayscale(programData.resizedImage);
+            loadedImagePictureBox.Image = ImageAlgorithms.Convert2Grayscale(programData.resizedImage, GrayscaleModels.calorimetricGrayscale);
         }
 
         private void saveOutputButton_Click(object sender, EventArgs e)
@@ -55,6 +56,20 @@ namespace ColorSeparator
             {
                 loadedImagePictureBox.Image.Save(saveFileDialog.FileName);
             }
+
+        }
+
+        private void separateChannelsButton_Click(object sender, EventArgs e)
+        {
+            if (programData.loadedImage == null)
+                return;
+
+            YCbCrSeparateImage yCbCrSeparateImage = new YCbCrSeparateImage();
+
+            List<Image> separatedChannelsImages = yCbCrSeparateImage.SeparateChannels(programData.loadedImage);
+            firstChannelPictureBox.Image = ImageAlgorithms.ResizeImage(separatedChannelsImages[0], firstChannelPictureBox.Width, firstChannelPictureBox.Height);
+            secondChannelPictureBox.Image = ImageAlgorithms.ResizeImage(separatedChannelsImages[1], secondChannelPictureBox.Width, secondChannelPictureBox.Height);
+            thirdChannelPictureBox.Image = ImageAlgorithms.ResizeImage(separatedChannelsImages[2], thirdChannelPictureBox.Width, thirdChannelPictureBox.Height);
 
         }
     }

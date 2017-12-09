@@ -36,7 +36,7 @@
             this.LoadImageButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ToGrayscaleButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.separateChannelsButton = new System.Windows.Forms.Button();
             this.saveOutputButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -61,9 +61,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.firstChannelPictureBox = new System.Windows.Forms.PictureBox();
+            this.secondChannelPictureBox = new System.Windows.Forms.PictureBox();
+            this.thirdChannelPictureBox = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -84,9 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstChannelPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondChannelPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thirdChannelPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -152,7 +152,7 @@
             this.tableLayoutPanel5.Controls.Add(this.LoadImageButton, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.comboBox1, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.ToGrayscaleButton, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.separateChannelsButton, 0, 3);
             this.tableLayoutPanel5.Controls.Add(this.saveOutputButton, 0, 4);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
@@ -194,14 +194,15 @@
             this.ToGrayscaleButton.UseVisualStyleBackColor = true;
             this.ToGrayscaleButton.Click += new System.EventHandler(this.ToGrayscaleButton_Click);
             // 
-            // button3
+            // separateChannelsButton
             // 
-            this.button3.Location = new System.Drawing.Point(3, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Separate Channels";
-            this.button3.UseVisualStyleBackColor = true;
+            this.separateChannelsButton.Location = new System.Drawing.Point(3, 114);
+            this.separateChannelsButton.Name = "separateChannelsButton";
+            this.separateChannelsButton.Size = new System.Drawing.Size(121, 23);
+            this.separateChannelsButton.TabIndex = 3;
+            this.separateChannelsButton.Text = "Separate Channels";
+            this.separateChannelsButton.UseVisualStyleBackColor = true;
+            this.separateChannelsButton.Click += new System.EventHandler(this.separateChannelsButton_Click);
             // 
             // saveOutputButton
             // 
@@ -423,9 +424,9 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox4, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox3, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.firstChannelPictureBox, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.secondChannelPictureBox, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.thirdChannelPictureBox, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label12, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label13, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.label11, 0, 0);
@@ -438,35 +439,35 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(978, 193);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // pictureBox4
+            // firstChannelPictureBox
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox4.Location = new System.Drawing.Point(3, 25);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(320, 165);
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.firstChannelPictureBox.BackColor = System.Drawing.Color.White;
+            this.firstChannelPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.firstChannelPictureBox.Location = new System.Drawing.Point(3, 25);
+            this.firstChannelPictureBox.Name = "firstChannelPictureBox";
+            this.firstChannelPictureBox.Size = new System.Drawing.Size(320, 165);
+            this.firstChannelPictureBox.TabIndex = 5;
+            this.firstChannelPictureBox.TabStop = false;
             // 
-            // pictureBox3
+            // secondChannelPictureBox
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox3.Location = new System.Drawing.Point(329, 25);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(320, 165);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
+            this.secondChannelPictureBox.BackColor = System.Drawing.Color.White;
+            this.secondChannelPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.secondChannelPictureBox.Location = new System.Drawing.Point(329, 25);
+            this.secondChannelPictureBox.Name = "secondChannelPictureBox";
+            this.secondChannelPictureBox.Size = new System.Drawing.Size(320, 165);
+            this.secondChannelPictureBox.TabIndex = 4;
+            this.secondChannelPictureBox.TabStop = false;
             // 
-            // pictureBox2
+            // thirdChannelPictureBox
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(655, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(320, 165);
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.thirdChannelPictureBox.BackColor = System.Drawing.Color.White;
+            this.thirdChannelPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thirdChannelPictureBox.Location = new System.Drawing.Point(655, 25);
+            this.thirdChannelPictureBox.Name = "thirdChannelPictureBox";
+            this.thirdChannelPictureBox.Size = new System.Drawing.Size(320, 165);
+            this.thirdChannelPictureBox.TabIndex = 3;
+            this.thirdChannelPictureBox.TabStop = false;
             // 
             // label12
             // 
@@ -522,9 +523,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.firstChannelPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondChannelPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thirdChannelPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,7 +541,7 @@
         private System.Windows.Forms.Button LoadImageButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button ToGrayscaleButton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button separateChannelsButton;
         private System.Windows.Forms.Button saveOutputButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -564,9 +565,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox firstChannelPictureBox;
+        private System.Windows.Forms.PictureBox secondChannelPictureBox;
+        private System.Windows.Forms.PictureBox thirdChannelPictureBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;

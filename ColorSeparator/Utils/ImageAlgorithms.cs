@@ -37,7 +37,7 @@ namespace ColorSeparator.Utils
         }
 
 
-        public static Bitmap Convert2Grayscale(Image image) //TODO maybe i can add different grayscale computing methods
+        public static Bitmap Convert2Grayscale(Image image, Func<Color, Color> grayscaleModel) //TODO maybe i can add different grayscale computing methods
         {
             Bitmap grayscaleBitmap = new Bitmap(image);
 
@@ -45,9 +45,11 @@ namespace ColorSeparator.Utils
                 for(int y = 0; y < grayscaleBitmap.Height; y++)
                 {
                     Color pixelColor = grayscaleBitmap.GetPixel(x, y);
-                    int grayscalePixelColorIntRepresentation = (int)(0.299 * pixelColor.R + 0.587 * pixelColor.G + 0.114 * pixelColor.B);
-                    Color grayscalePixelColor = Color.FromArgb(grayscalePixelColorIntRepresentation, grayscalePixelColorIntRepresentation, grayscalePixelColorIntRepresentation);
-                    grayscaleBitmap.SetPixel(x, y, grayscalePixelColor);
+                    //int grayscalePixelColorIntRepresentation = (int)(0.299 * pixelColor.R + 0.587 * pixelColor.G + 0.114 * pixelColor.B);
+                    //Color grayscalePixelColor = Color.FromArgb(grayscalePixelColorIntRepresentation, grayscalePixelColorIntRepresentation, grayscalePixelColorIntRepresentation);
+                    //grayscaleBitmap.SetPixel(x, y, grayscalePixelColor);
+
+                    grayscaleBitmap.SetPixel(x, y, grayscaleModel(pixelColor));
 
                 }
 
